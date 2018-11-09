@@ -1,8 +1,7 @@
-console.log("Laura")
-
-let numberOfGuesses = 10
-let pickedLetter = []; 
+let numberOfGuesses = 10;
 let wrongGuesses = []; 
+let wins = 0;
+let losses = 0;
 
 let alphabet = [
     "a",
@@ -33,26 +32,24 @@ let alphabet = [
     "z"
 ];
 
-//Pick a random letter
-function start() {
-
+//Pick a random letter//Compare user guess//
+document.onkeyup = function(event) {
+    let userGuess = event.key; 
     let pickedLetter = Math.floor(Math.random()*alphabet.length);
-    console.log(pickedLetter);
-    console.log(3);
+    if (userGuess === pickedLetter) {
+        wins++;
+    } else {
+        losses++; 
+    }
+};
 
-}
+//List guessed letters
 
-//Define Wins
-let wins = 0 
 
-//Define Loses
-let loses = 0 
+//Update HTML
+function updateHTML() {
+    document.getElementById("#remainingGuesses").innerHTML = numberOfGuesses;
+    document.getElementById("#loses").innerHTML = losses;
+    document.getElementById("#wins").innterHTML = wins; 
 
-//Define Guesses Left
-
-function guessesLeft () {
-    let numberOfGuesses 
-}
-
-//List Guesses So Far
-
+}; 
