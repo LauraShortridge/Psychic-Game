@@ -1,0 +1,8 @@
+#redtarot {
+    background-image: url("../images/redtarot.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto; 
+    min-height: 720px; 
+    margin: 0; 
+  }
